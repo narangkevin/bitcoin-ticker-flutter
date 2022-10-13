@@ -78,7 +78,6 @@ class _PriceScreenState extends State<PriceScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     getCoinPrice(currency: selectedCurrency);
   }
@@ -110,13 +109,11 @@ class _PriceScreenState extends State<PriceScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          //3: You'll need to use a Column Widget to contain the three CryptoCards.
           Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               CryptoCard(
                 cryptoCurrency: 'BTC',
-                //7. Finally, we use a ternary operator to check if we are waiting and if so, we'll display a '?' otherwise we'll show the actual price data.
                 value: isWaiting ? '?' : coinValues['BTC'],
                 selectedCurrency: selectedCurrency,
               ),
@@ -137,7 +134,6 @@ class _PriceScreenState extends State<PriceScreen> {
               ),
             ],
           ),
-
           Container(
             height: 150.0,
             alignment: Alignment.center,
@@ -152,7 +148,6 @@ class _PriceScreenState extends State<PriceScreen> {
 }
 
 class CryptoCard extends StatelessWidget {
-  //2: You'll need to able to pass the selectedCurrency, value and cryptoCurrency to the constructor of this CryptoCard Widget.
   const CryptoCard({
     this.value,
     this.selectedCurrency,
